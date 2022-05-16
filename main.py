@@ -1,10 +1,14 @@
 from ast import If
+from audioop import add
 from email.mime import audio
+from pyexpat import features
 from pip import main
 import pyaudio
 import speech_recognition as sr
 import pyttsx3
 import datetime
+from sympy import solve_undetermined_coeffs
+import wikipedia
 
 engine = pyttsx3.init('sapi5')
 
@@ -18,7 +22,7 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-
+# Greeting at start
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if (hour >= 0 and hour < 12):
@@ -54,4 +58,13 @@ def takeCommand():
 # Main Function
 if __name__ == "__main__":
     wishMe()
-    takeCommand()
+    while True:
+        query = takeCommand().lower()
+        if "wikipedia" in query:
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia","")
+            results = wikipedia.summary(query, sentences = 2)
+            #  Please use "according to wikipedia" for commands
+            speak("According to Wikipedia")
+            speak(results)
+
