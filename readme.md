@@ -12,6 +12,7 @@ Libraries (Dependencies) used in this projects are:
 - Text-to-Speech (pyttsx3)
 - Wikipedia
 - Datetime
+- Web Browser
 
 
 
@@ -19,8 +20,9 @@ Libraries (Dependencies) used in this projects are:
 
 - Search anything from wikipedia
 - Open Youtube in the browser
-- Play Music
-- Send Email
+- Search on anything on google
+- Tells Time
+- Open Code Editor
 
 
 ## Authors
