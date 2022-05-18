@@ -95,11 +95,27 @@ if __name__ == "__main__":
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Now time is {strTime}")
+
+        # Play Songs
+        elif 'song' in query:
+            speak("Playing the song...")
+            music_dir = "C:\\Users\\pallavi.meshram\\Downloads\\songs"
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir,songs[0]))
+
+        # Comedy
+        elif 'explain yourself' in query:
+            speak("I am Realtalk voice communication utility for Windows and Linux")
+            speak("My creators are Anmol Pallavi Aabha Moss khan Heymonth")
+            
         
         # Open VS code
         elif 'open code' in query:
             codePath = "C:\\Users\\pallavi.meshram\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
+
+
         elif 'exit' in query:
             speak("Happy to help you!, Have a good day ahead")
             flag = False
